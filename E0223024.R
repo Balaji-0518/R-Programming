@@ -156,6 +156,8 @@ rep(x,each = 5)
 B <-sqrt(A)
 B
 
+#packages
+
 install.packages("ggplot2")
 
 ?qplot()
