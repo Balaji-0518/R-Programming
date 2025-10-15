@@ -1,0 +1,23 @@
+setwd("C:\\Users\\ece-lab\\Downloads")
+install.packages((c("tm","wordcloud","ggplot2","RcolorBrewer"))
+                 
+library(tm)
+library(wordcloud)
+library(ggplot2)
+library(RColorBrewer)
+data<- read.csv("yourfile.csv",stringsAsFactors = FALSE)
+corpus<-corpus(vectorsource(datatext))
+corpus<-tm_map(corpus,content_transformer(tolower))
+corpus<-tm_map(corpus,removepunctuation)
+corpus<-tm_map(corpus,removenumbers)
+corpus<-tm_map(corpus,removewords,stopwords("english"))
+corpus<-tm_map(corpus,stripwhitespace)
+tdm<- TermDocumentMatrix(corpus)
+m<-as.matrix(tdm)
+word-freq<-sort(row Sums(m),decreasing=TRUE)
+df<-data.frame(word=names(word_freq),freq = word_freq)
+ggplot(df[1:10].aes(x= reorder(word_freq),y=freq))+coord_flip()+
+  labs(title="Top 10 Most Frequent Words",x="word",y="Frequency")
+set.seed(123)
+wordcloud(words = df$word,feq=df$freq,min.freq=2,max.words=100,color=brwer.pal(8,"dark2"))
+

@@ -1,0 +1,240 @@
+while(FALSE)
+{
+print("hello")
+}
+while(TRUE)
+{
+print("hello")
+}
+counter<-1
+while(counter < 12)
+{
+print(counter)
+}
+counter<-1
+while(counter < 12)
+{
+print(counter)
+counter=counter+1
+}
+counter<-1
+while(counter <= 12)
+{
+print(counter)
+counter=counter+1
+}
+for(i in 1:5)
+{
+print("hi")
+}
+for(i in 1:10)
+{
+print("hi")
+}
+rnorm()
+rnorm(5)
+rnorm(5,10,8)
+rnorm(n=5,meam=10,sd=8)
+rnorm(n=5,mean=10,sd=8)
+rnorm(n=5,sd=8,mean=100)
+rnorm(n=5,sd=8,mean=10)
+rnorm(n=5,sd=8)
+seq(10,20,3)
+seq(from=10,to=20,by=3)
+seq(from=10,t0=20,length.out=100)
+seq(from=10,to=20,length.out=100)
+x<-c("a","b","c")
+seq(from=10,to=20,along.with=x)
+req(5,10)
+rep(5,10)
+rep(5:6)
+rep(5:6,times=10)
+rep(5:6,each=10)
+rep(x,each=5)
+rep(x,times=5)
+A<- seq(from=10, to=20,along.with=x)
+A
+sqrt(A)
+B<-sqrt(A)
+B
+library(caTools)
+library(cqTools)
+library(coTools)
+install.packages("caTools")
+library(coTools)
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+library(caTools)
+dataset = read.csv("Data.csv")
+dataset = read.csv(choose.file())
+dataset = read.csv(file.choose())
+View(dataset)
+dataset$Age=ifelse(is.na(dataset$Age),
+ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),dataset$Age)
+dataset$Salary=ifelse(is.na(dataset$Salary),
+ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),dataset$Salary)
+dataset$Country = factor(dataset$Country,
+levels = c('France','Spain','Germany'),labels = c(1,2,3))
+dataset$Purchased = factor(dataset$Purchased,
+levels = c('Yes','No'),labels = c(0,1))
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+training_set = subset(dataset)
+training_set = subset(dataset,split == TRUE)
+test_set = subset(dataset,split == FALSE)
+View(test_set)
+training_set[,2:3] =scale(training_set[, 2:3])
+test_set[,2:3] =scale(test_set[, 2:3])
+View(test_set)
+View(training_set)
+dataset = read.csv(file.choose())
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+training_set = subset(dataset,split == TRUE)
+split = sample.split(dataset$Purchased, SplitRatio = 2/3)
+split = sample.split(dataset$Salary, SplitRatio = 2/3)
+training_set = subset(dataset,split == TRUE)
+test_set = subset(dataset,split == FALSE)
+View(training_set)
+View(test_set)
+regressor = lm(formula = Salary ~ YearsExperience, data = training_set)
+summary(regressor)
+dataset = read.csv(file.choose())
+dataset = read.csv(file.choose())
+View(dataset)
+dataset =dataset[,3:5]
+View(dataset)
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Salary, SplitRatio =0.75)
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Salary, SplitRatio ="0.75")
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Salary, SplitRatio =0.75)
+split = sample.split(dataset$Purchased, SplitRatio =0.75)
+training_set = subset(dataset,split == TRUE)
+test_set = subset(dataset,split == FALSE)
+training_set[,1:2] = scale(training_set[,1:2])
+test_set[,1:2] = scale(test_set[,1:2])
+View(test_set)
+View(training_set)
+classifier = glm(formula = purchased ~ .,
+family = binomial,
+data = training_set)
+classifier = glm(formula = Purchased ~ .,
+family = binomial,
+data = training_set)
+prob_pred = predict(classifier,type = 'response',newdata = test_set[-3])
+y_pred = ifelse(prob_pred > 0.5, 1, 0)
+View(classifier)
+prob_pred
+y_pred
+cm = table(test_set[, 3],y_pred)
+cm
+View(classifier)
+dataset = read.csv(file.choose())
+View(dataset)
+dataset$State= factor(dataset$State,
+levels = c('New York','California','Florida'),
+labels = c(1,2,3))
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Profit, SplitRatio =0.8)
+training_set = subset(dataset,split == TRUE)
+test_set = subset(dataset,split == FALSE)
+regressor = lm(formula = Profit ~ .,
+data = training_set)
+regressor
+summary(regressor)
+y_pred = predict(regressor,newdata = test_set)
+y_pred
+View(test_set)
+setwd("C:\\Users\\ece-lab\\Desktop\\data science 3rd year")
+dataset = read.csv(file.choose())
+setwd("C:\\Users\\ece-lab\\Desktop\\data science 3rd year")
+dataset = read.csv(file.choose())
+X<-dataset[4:5]
+set.seed(6)
+wcss<-vector()
+for(i in 1:10)wcss[i]<-sum(kmeans(X,i)$withinss)
+plot(1:10, wcss, type='b', main=paste('Clusters of clients'),xlab="Number of clusters",ylab="WCSS")
+set.seed(29)
+kmeans<-kmeans(X, 5, iter.max=300,nstart=10)
+library(cluster)
+clusplot(X,
+kmeans$cluster,
+lines=0,
+shade=TRUE,
+color=TRUE,
+labels=2,
+plotchar=FALSE,
+span=TRUE,
+main=paste('clusters of clients'),
+xlab="Annual Income",
+ylab="spending score
+")
+dataset <- read.csv("mall.csv")
+dataset <- read.csv("mall.csv")
+x <- dataset[4:5]
+set.seed(6)
+wcss <- vector()
+for(i in 1:10) wcss[i] <- sum(kmeans(x,i)$withinss)
+plot(1:10 , wcss, type="b", main = paste('Clusters of clients'), Xlab ="Numbers of clusters", ylab = "WCSS")
+set.seed(29)
+kmeans <- kmeans(x, 5, iter.max = 300, nstart = 10)
+library(cluster)
+clusplot(x,
+kmeans$cluster,
+lines = 0,
+shade = TRUE,
+color = TRUE,
+labels =2,
+plotchar = FALSE,
+span = TRUE,
+main = paste('Clusters of clients'),
+xlab = "annual Income",
+ylab = "spending score")
+dataset <- read.csv("mall.csv")
+x <- dataset[4:5]
+set.seed(6)
+wcss <- vector()
+for(i in 1:10) wcss[i] <- sum(kmeans(x,i)$withinss)
+plot(1:10 , wcss, type="b", main = paste('Clusters of clients'), Xlab ="Numbers of clusters", ylab = "WCSS")
+set.seed(29)
+kmeans <- kmeans(x, 5, iter.max = 300, nstart = 10)
+library(cluster)
+clusplot(x,
+kmeans$cluster,
+lines = 0,
+shade = TRUE,
+color = TRUE,
+labels =2,
+plotchar = FALSE,
+span = TRUE,
+main = paste('Clusters of clients'),
+xlab = "annual Income",
+ylab = "spending score")
+dataset <- read.csv("mall.csv")
+x <- dataset[4:5]
+set.seed(6)
+wcss <- vector()
+for(i in 1:10) wcss[i] <- sum(kmeans(x,i)$withinss)
+plot(1:10 , wcss, type="b", main = paste('Clusters of clients'), Xlab ="Numbers of clusters", ylab = "WCSS")
+set.seed(29)
+kmeans <- kmeans(x, 5, iter.max = 300, nstart = 10)
+library(cluster)
+clusplot(x,
+kmeans$cluster,
+lines = 0,
+shade = TRUE,
+color = TRUE,
+labels =2,
+plotchar = FALSE,
+span = TRUE,
+main = paste('Clusters of clients'),
+xlab = "annual Income",
+ylab = "spending score")
